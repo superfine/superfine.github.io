@@ -1,2 +1,2 @@
 # superfine.github.io
-A GitHub Page
+Please visit [http://superfine.github.io/](http://superfine.github.io/). Thanks.
