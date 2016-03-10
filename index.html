@@ -13,6 +13,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/moon.css" id="theme">
@@ -70,8 +71,14 @@
           <section>
             <h2>adaptation</h2>
             <p class="fragment">noun <span class="high-gray">|</span> ad·ap·ta·tion <span class="high-gray">|</span> \ˌa-ˌdap-ˈtā-shən, -dəp-\</p>
-            <p class="fragment high-red">: the process of changing to fit some purpose or situation : the process of adapting</p>
+            <p class="fragment high-red">: the process of changing to fit some purpose or situation</p>
+            <p class="fragment high-red">: the process of adapting</p>
           </section>
+        </section>
+
+        <section>
+          <h2><span class="high-blue">Responsive</span> reacts to a situation</h2>
+          <h2><span class="high-red">Adaptive</span> adapts to a situation</h2>
         </section>
 
         <section data-background="https://cdn.shopify.com/s/files/1/0051/7692/products/ABA-hero-4_c97486bb-368b-4a52-8d53-72e7d35848e0.jpg?v=1417531418">
@@ -117,10 +124,6 @@
 
         <section>
           <h2>target &divide; content = result</h2>
-        </section>
-
-        <section>
-          <h2>target &divide; content = result</h2>
           <p>Say we have a 960 grid and want to add a content container of 900 pixels in our grid.</p>
           <h3>900 &divide; 960 = 0.9375</h3>
           <pre><code class="css" data-trim contenteditable style="font-size: 18px;">
@@ -137,6 +140,11 @@
         <section>
           <h2>Flexible Images</h2>
           <p>Flexible images and media that keep content intact on any resolution.</p>
+          <pre><code class="css" data-trim contenteditable style="font-size: 18px;">
+img, embed, object, video {
+  max-width: 100%;
+}
+          </code></pre>
         </section>
 
         <section data-background="http://www.websitemagazine.com/images/blog/screen-resolutions.png">
@@ -145,6 +153,77 @@
         <section>
           <h2>Media Queries</h2>
           <p>Media queries allowing designs to respond by establishing dimension breakpoints.</p>
+        </section>
+
+        <section>
+          <h3>General</h3>
+          <pre><code class="css" data-trim contenteditable style="font-size: 18px;">
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px)
+and (max-device-width : 480px) {
+/* Styles */
+}
+
+/* Tablets (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+  /* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1224px) {
+  /* Styles */
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>Specific</h3>
+          <pre><code class="css" data-trim contenteditable style="font-size: 18px;">
+/* CSS for super-super-high-density screens - xxhdpi */
+@media screen and (-webkit-device-pixel-ratio: 3.0) {
+  /* Styles */
+}
+
+/* CSS for super-high-density screens - xhdpi */
+@media screen and (-webkit-device-pixel-ratio: 2.0) {
+  /* Styles */
+}
+
+/* CSS for high-density screens - hdpi */
+@media screen and (-webkit-device-pixel-ratio: 1.5) {
+  /* Styles */
+}
+
+/* CSS for medium-density screens - mdpi */
+@media screen and (-webkit-device-pixel-ratio: 1.0) {
+  /* Styles */
+}
+
+/* CSS for low-density screens - ldpi */
+@media screen and (-webkit-device-pixel-ratio: 0.75) {
+  /* Styles */
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>Super over specific (please don't)</h3>
+          <pre><code class="css" data-trim contenteditable style="font-size: 18px;">
+/* iPad 3 (portrait) ----------- */
+@media only screen and (min-device-width : 768px)
+and (max-device-width : 1024px) and (orientation : portrait)
+and (-webkit-min-device-pixel-ratio : 2) {
+  /* Styles */
+}
+
+/* iPad 3 (landscape) ----------- */
+@media only screen and (min-device-width : 768px)
+and (max-device-width : 1024px) and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio : 2) {
+  /* Styles */
+}
+          </code></pre>
         </section>
 
         <section>
@@ -189,13 +268,13 @@
         <section>
           <h2>How are they different?</h2>
           <img src="https://cdn.css-tricks.com/wp-content/uploads/2015/11/rwd-vs-adapt-example.gif" alt="Difference Between Responsive and Adaptive Design">
-          <p>The <span class="high-blue">responsive</span> example on top <em>flows</em>, the <span class="high-red">adaptive</span> example on bottom <em>snaps</em> into place.</p>
+          <p>The <span class="high-blue">responsive</span> example on top <em class="high-gray">flows</em>, the <span class="high-red">adaptive</span> example on bottom <em class="high-gray">snaps</em> into place.</p>
         </section>
 
         <section>
           <h2>How are they different?</h2>
-          <p><span class="high-blue">Responsive</span> websites respond to the size of the browser at </p><p><em>any given point</em>.</p>
-          <p><span class="high-red">Adaptive</span> websites adapt to the width of the browser at </p><p><em>a specific points</em>.</p>
+          <p><span class="high-blue">Responsive</span> websites respond to the size of the browser at </p><p><em class="high-gray">any given point</em>.</p>
+          <p><span class="high-red">Adaptive</span> websites adapt to the width of the browser at </p><p><em class="high-gray">a specific points</em>.</p>
         </section>
 
         <section>
@@ -209,16 +288,12 @@
             </thead>
             <tbody>
               <tr>
-                <td>Apples</td>
-                <td>Pears</td>
+                <td>Aimed at crafting sites to provide an optimal viewing experience—easy reading and navigation with a minimum of resizing, panning, and scrolling—across a wide range of devices.</td>
+                <td>Instead, there are several distinct layouts for multiple screen sizes, and the layout used depends on the screen size used.</td>
               </tr>
               <tr>
-                <td>Lemonade</td>
-                <td>Ice Tea</td>
-              </tr>
-              <tr>
-                <td>Bread</td>
-                <td>Rolls</td>
+                <td>Relying on flexible and fluid grids.</td>
+                <td>Relying on predefined screen sizes.</td>
               </tr>
             </tbody>
           </table>
@@ -230,7 +305,21 @@
 
         <section>
           <h2>Identifying the breakpoints</h2>
-          <p>The design process kicks off by surveying the different devices for which we're planning to design.</p>
+          <p></p>
+          <table>
+            <thead>
+              <tr>
+                <th><span class="high-blue">Responsive</span></th>
+                <th><span class="high-red">Adaptive</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>The design process kicks off with a mobile first approach.</td>
+                <td>The design process kicks off by surveying the different devices for which we're planning to design.</td>
+              </tr>
+            </tbody>
+          </table>
         </section>
 
         <!-- Denis -->
