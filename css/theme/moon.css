@@ -293,7 +293,7 @@ body {
  * Edits
  *********************************************/
 .high-red {color: #ff2c2d;}
-.high-blue {color: #1b91ff;}
+.high-blue, h2.high-blue {color: #1b91ff;}
 .high-green {color: #17ff2e;}
 .high-gray {color: #78b9e6;}
 .reveal blockquote {width: 100%;}
